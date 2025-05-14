@@ -47,7 +47,6 @@ export const rateLimitByIp = async (
 
     const updatedTokens = tokens - 1;
 
-    // ✅ Use `hset` instead of `hmset`
     await redis.hset(key, {
       tokens: updatedTokens.toFixed(6),
       timestamp: now.toString(),
