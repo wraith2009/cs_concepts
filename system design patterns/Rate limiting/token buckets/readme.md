@@ -18,7 +18,7 @@ The **Token Bucket Algorithm** is used to **control the rate of incoming request
 - Each incoming request **consumes 1 token**.
 - **Tokens are refilled over time** at a fixed rate.
 - If no tokens are available, the request is **rate-limited (HTTP 429)**.
-- The bucket has a **max capacity**, so tokens can’t overflow.
+- The bucket has a **max capacity**, so tokens can&apos;t overflow.
 
 This allows **bursty traffic** within limits while still enforcing an average rate over time.
 
