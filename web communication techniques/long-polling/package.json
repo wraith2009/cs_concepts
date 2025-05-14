@@ -1,5 +1,5 @@
 {
-  "name": "web_sockets",
+  "name": "long-polling",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
