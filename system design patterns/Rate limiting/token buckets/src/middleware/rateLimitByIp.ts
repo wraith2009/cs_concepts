@@ -2,8 +2,8 @@ import { NextFunction, Request, Response } from "express";
 import redis from "../config/redis.config";
 
 const MAX_TOKENS = 5;
-const REFILL_INTERVAL_SECONDS = 60; // Refill 5 tokens every 60 seconds
-const REFILL_RATE_PER_SECOND = MAX_TOKENS / REFILL_INTERVAL_SECONDS; // ~0.083 tokens per second
+const REFILL_INTERVAL_SECONDS = 60;
+const REFILL_RATE_PER_SECOND = MAX_TOKENS / REFILL_INTERVAL_SECONDS;
 
 /**
  * Token Bucket Rate Limiter Middleware
@@ -47,13 +47,11 @@ export const rateLimitByIp = async (
 
     const updatedTokens = tokens - 1;
 
-    // ✅ Use `hset` instead of `hmset`
     await redis.hset(key, {
       tokens: updatedTokens.toFixed(6),
       timestamp: now.toString(),
     });
 
-    // Set expiry so unused keys don't persist forever
     await redis.expire(key, 120);
 
     console.log(
