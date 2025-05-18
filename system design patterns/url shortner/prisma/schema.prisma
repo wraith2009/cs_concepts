@@ -15,14 +15,14 @@ datasource db {
 }
 
 model UrlTicket {
-  id      Int @unique @default(autoincrement())
+  id      Int @unique @default(autoincrement()) @id
   start   Int
   end     Int
   current Int
 }
 
 model Url {
-  id        Int      @default(autoincrement())
+  id        Int      @default(autoincrement()) @id
   short_url String   @unique
   long_url  String
   createdAt DateTime @default(now())
