@@ -56,3 +56,24 @@ export const shortenUrl = async (
     res.status(500).json({ error: "Internal server error" });
   }
 };
+
+export const redirectUrl = async (
+  req: Request,
+  res: Response
+): Promise<void> => {
+  const { shortCode } = req.params;
+  try {
+    const urlEntry = await prisma.url.findUnique({
+      where: { short_url: shortCode },
+    });
+
+    if (!urlEntry) {
+      res.status(404).send("Short URL not found");
+      return;
+    }
+    res.redirect(302, urlEntry.long_url);
+  } catch (err) {
+    console.error("Error during redirect:", err);
+    res.status(500).send("Internal Server Error");
+  }
+};
