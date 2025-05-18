@@ -6,19 +6,21 @@ async function main() {
   const rows = 5;
 
   for (let i = 0; i < rows; i++) {
-    const start = startBase + i * range;
-    const end = start + range;
-    const current = start;
+    const range_start = startBase + i * range;
+    const range_end = range_start + range;
+    const current_value = range_start;
 
     await prisma.urlTicket.create({
       data: {
-        start,
-        end,
-        current,
+        range_start,
+        range_end,
+        current_value,
       },
     });
 
-    console.log(`inserted ${start} to ${end}, current = ${current}`);
+    console.log(
+      `inserted ${range_start} to ${range_end}, current = ${current_value}`
+    );
   }
 }
 
@@ -28,6 +30,6 @@ main()
     return prisma.$disconnect();
   })
   .catch((err) => {
-    console.error("error while seeding tickets");
+    console.error("error while seeding tickets", err);
     return prisma.$disconnect();
   });

@@ -122,9 +122,9 @@ exports.Prisma.TransactionIsolationLevel = makeStrictEnum({
 
 exports.Prisma.UrlTicketScalarFieldEnum = {
   id: 'id',
-  start: 'start',
-  end: 'end',
-  current: 'current'
+  range_start: 'range_start',
+  range_end: 'range_end',
+  current_value: 'current_value'
 };
 
 exports.Prisma.UrlScalarFieldEnum = {

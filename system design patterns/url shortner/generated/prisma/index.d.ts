@@ -974,74 +974,74 @@ export namespace Prisma {
 
   export type UrlTicketAvgAggregateOutputType = {
     id: number | null
-    start: number | null
-    end: number | null
-    current: number | null
+    range_start: number | null
+    range_end: number | null
+    current_value: number | null
   }
 
   export type UrlTicketSumAggregateOutputType = {
     id: number | null
-    start: number | null
-    end: number | null
-    current: number | null
+    range_start: number | null
+    range_end: number | null
+    current_value: number | null
   }
 
   export type UrlTicketMinAggregateOutputType = {
     id: number | null
-    start: number | null
-    end: number | null
-    current: number | null
+    range_start: number | null
+    range_end: number | null
+    current_value: number | null
   }
 
   export type UrlTicketMaxAggregateOutputType = {
     id: number | null
-    start: number | null
-    end: number | null
-    current: number | null
+    range_start: number | null
+    range_end: number | null
+    current_value: number | null
   }
 
   export type UrlTicketCountAggregateOutputType = {
     id: number
-    start: number
-    end: number
-    current: number
+    range_start: number
+    range_end: number
+    current_value: number
     _all: number
   }
 
 
   export type UrlTicketAvgAggregateInputType = {
     id?: true
-    start?: true
-    end?: true
-    current?: true
+    range_start?: true
+    range_end?: true
+    current_value?: true
   }
 
   export type UrlTicketSumAggregateInputType = {
     id?: true
-    start?: true
-    end?: true
-    current?: true
+    range_start?: true
+    range_end?: true
+    current_value?: true
   }
 
   export type UrlTicketMinAggregateInputType = {
     id?: true
-    start?: true
-    end?: true
-    current?: true
+    range_start?: true
+    range_end?: true
+    current_value?: true
   }
 
   export type UrlTicketMaxAggregateInputType = {
     id?: true
-    start?: true
-    end?: true
-    current?: true
+    range_start?: true
+    range_end?: true
+    current_value?: true
   }
 
   export type UrlTicketCountAggregateInputType = {
     id?: true
-    start?: true
-    end?: true
-    current?: true
+    range_start?: true
+    range_end?: true
+    current_value?: true
     _all?: true
   }
 
@@ -1133,9 +1133,9 @@ export namespace Prisma {
 
   export type UrlTicketGroupByOutputType = {
     id: number
-    start: number
-    end: number
-    current: number
+    range_start: number
+    range_end: number
+    current_value: number
     _count: UrlTicketCountAggregateOutputType | null
     _avg: UrlTicketAvgAggregateOutputType | null
     _sum: UrlTicketSumAggregateOutputType | null
@@ -1159,42 +1159,42 @@ export namespace Prisma {
 
   export type UrlTicketSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    start?: boolean
-    end?: boolean
-    current?: boolean
+    range_start?: boolean
+    range_end?: boolean
+    current_value?: boolean
   }, ExtArgs["result"]["urlTicket"]>
 
   export type UrlTicketSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    start?: boolean
-    end?: boolean
-    current?: boolean
+    range_start?: boolean
+    range_end?: boolean
+    current_value?: boolean
   }, ExtArgs["result"]["urlTicket"]>
 
   export type UrlTicketSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    start?: boolean
-    end?: boolean
-    current?: boolean
+    range_start?: boolean
+    range_end?: boolean
+    current_value?: boolean
   }, ExtArgs["result"]["urlTicket"]>
 
   export type UrlTicketSelectScalar = {
     id?: boolean
-    start?: boolean
-    end?: boolean
-    current?: boolean
+    range_start?: boolean
+    range_end?: boolean
+    current_value?: boolean
   }
 
-  export type UrlTicketOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "start" | "end" | "current", ExtArgs["result"]["urlTicket"]>
+  export type UrlTicketOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "range_start" | "range_end" | "current_value", ExtArgs["result"]["urlTicket"]>
 
   export type $UrlTicketPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "UrlTicket"
     objects: {}
     scalars: $Extensions.GetPayloadResult<{
       id: number
-      start: number
-      end: number
-      current: number
+      range_start: number
+      range_end: number
+      current_value: number
     }, ExtArgs["result"]["urlTicket"]>
     composites: {}
   }
@@ -1619,9 +1619,9 @@ export namespace Prisma {
    */
   interface UrlTicketFieldRefs {
     readonly id: FieldRef<"UrlTicket", 'Int'>
-    readonly start: FieldRef<"UrlTicket", 'Int'>
-    readonly end: FieldRef<"UrlTicket", 'Int'>
-    readonly current: FieldRef<"UrlTicket", 'Int'>
+    readonly range_start: FieldRef<"UrlTicket", 'Int'>
+    readonly range_end: FieldRef<"UrlTicket", 'Int'>
+    readonly current_value: FieldRef<"UrlTicket", 'Int'>
   }
     
 
@@ -3020,9 +3020,9 @@ export namespace Prisma {
 
   export const UrlTicketScalarFieldEnum: {
     id: 'id',
-    start: 'start',
-    end: 'end',
-    current: 'current'
+    range_start: 'range_start',
+    range_end: 'range_end',
+    current_value: 'current_value'
   };
 
   export type UrlTicketScalarFieldEnum = (typeof UrlTicketScalarFieldEnum)[keyof typeof UrlTicketScalarFieldEnum]
@@ -3123,16 +3123,16 @@ export namespace Prisma {
     OR?: UrlTicketWhereInput[]
     NOT?: UrlTicketWhereInput | UrlTicketWhereInput[]
     id?: IntFilter<"UrlTicket"> | number
-    start?: IntFilter<"UrlTicket"> | number
-    end?: IntFilter<"UrlTicket"> | number
-    current?: IntFilter<"UrlTicket"> | number
+    range_start?: IntFilter<"UrlTicket"> | number
+    range_end?: IntFilter<"UrlTicket"> | number
+    current_value?: IntFilter<"UrlTicket"> | number
   }
 
   export type UrlTicketOrderByWithRelationInput = {
     id?: SortOrder
-    start?: SortOrder
-    end?: SortOrder
-    current?: SortOrder
+    range_start?: SortOrder
+    range_end?: SortOrder
+    current_value?: SortOrder
   }
 
   export type UrlTicketWhereUniqueInput = Prisma.AtLeast<{
@@ -3140,16 +3140,16 @@ export namespace Prisma {
     AND?: UrlTicketWhereInput | UrlTicketWhereInput[]
     OR?: UrlTicketWhereInput[]
     NOT?: UrlTicketWhereInput | UrlTicketWhereInput[]
-    start?: IntFilter<"UrlTicket"> | number
-    end?: IntFilter<"UrlTicket"> | number
-    current?: IntFilter<"UrlTicket"> | number
+    range_start?: IntFilter<"UrlTicket"> | number
+    range_end?: IntFilter<"UrlTicket"> | number
+    current_value?: IntFilter<"UrlTicket"> | number
   }, "id">
 
   export type UrlTicketOrderByWithAggregationInput = {
     id?: SortOrder
-    start?: SortOrder
-    end?: SortOrder
-    current?: SortOrder
+    range_start?: SortOrder
+    range_end?: SortOrder
+    current_value?: SortOrder
     _count?: UrlTicketCountOrderByAggregateInput
     _avg?: UrlTicketAvgOrderByAggregateInput
     _max?: UrlTicketMaxOrderByAggregateInput
@@ -3162,9 +3162,9 @@ export namespace Prisma {
     OR?: UrlTicketScalarWhereWithAggregatesInput[]
     NOT?: UrlTicketScalarWhereWithAggregatesInput | UrlTicketScalarWhereWithAggregatesInput[]
     id?: IntWithAggregatesFilter<"UrlTicket"> | number
-    start?: IntWithAggregatesFilter<"UrlTicket"> | number
-    end?: IntWithAggregatesFilter<"UrlTicket"> | number
-    current?: IntWithAggregatesFilter<"UrlTicket"> | number
+    range_start?: IntWithAggregatesFilter<"UrlTicket"> | number
+    range_end?: IntWithAggregatesFilter<"UrlTicket"> | number
+    current_value?: IntWithAggregatesFilter<"UrlTicket"> | number
   }
 
   export type UrlWhereInput = {
@@ -3185,14 +3185,14 @@ export namespace Prisma {
   }
 
   export type UrlWhereUniqueInput = Prisma.AtLeast<{
+    id?: number
     short_url?: string
     AND?: UrlWhereInput | UrlWhereInput[]
     OR?: UrlWhereInput[]
     NOT?: UrlWhereInput | UrlWhereInput[]
-    id?: IntFilter<"Url"> | number
     long_url?: StringFilter<"Url"> | string
     createdAt?: DateTimeFilter<"Url"> | Date | string
-  }, "short_url">
+  }, "id" | "short_url">
 
   export type UrlOrderByWithAggregationInput = {
     id?: SortOrder
@@ -3217,54 +3217,52 @@ export namespace Prisma {
   }
 
   export type UrlTicketCreateInput = {
-    id?: number
-    start: number
-    end: number
-    current: number
+    range_start: number
+    range_end: number
+    current_value: number
   }
 
   export type UrlTicketUncheckedCreateInput = {
     id?: number
-    start: number
-    end: number
-    current: number
+    range_start: number
+    range_end: number
+    current_value: number
   }
 
   export type UrlTicketUpdateInput = {
-    start?: IntFieldUpdateOperationsInput | number
-    end?: IntFieldUpdateOperationsInput | number
-    current?: IntFieldUpdateOperationsInput | number
+    range_start?: IntFieldUpdateOperationsInput | number
+    range_end?: IntFieldUpdateOperationsInput | number
+    current_value?: IntFieldUpdateOperationsInput | number
   }
 
   export type UrlTicketUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
-    start?: IntFieldUpdateOperationsInput | number
-    end?: IntFieldUpdateOperationsInput | number
-    current?: IntFieldUpdateOperationsInput | number
+    range_start?: IntFieldUpdateOperationsInput | number
+    range_end?: IntFieldUpdateOperationsInput | number
+    current_value?: IntFieldUpdateOperationsInput | number
   }
 
   export type UrlTicketCreateManyInput = {
     id?: number
-    start: number
-    end: number
-    current: number
+    range_start: number
+    range_end: number
+    current_value: number
   }
 
   export type UrlTicketUpdateManyMutationInput = {
-    start?: IntFieldUpdateOperationsInput | number
-    end?: IntFieldUpdateOperationsInput | number
-    current?: IntFieldUpdateOperationsInput | number
+    range_start?: IntFieldUpdateOperationsInput | number
+    range_end?: IntFieldUpdateOperationsInput | number
+    current_value?: IntFieldUpdateOperationsInput | number
   }
 
   export type UrlTicketUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
-    start?: IntFieldUpdateOperationsInput | number
-    end?: IntFieldUpdateOperationsInput | number
-    current?: IntFieldUpdateOperationsInput | number
+    range_start?: IntFieldUpdateOperationsInput | number
+    range_end?: IntFieldUpdateOperationsInput | number
+    current_value?: IntFieldUpdateOperationsInput | number
   }
 
   export type UrlCreateInput = {
-    id?: number
     short_url: string
     long_url: string
     createdAt?: Date | string
@@ -3278,7 +3276,6 @@ export namespace Prisma {
   }
 
   export type UrlUpdateInput = {
-    id?: IntFieldUpdateOperationsInput | number
     short_url?: StringFieldUpdateOperationsInput | string
     long_url?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -3299,7 +3296,6 @@ export namespace Prisma {
   }
 
   export type UrlUpdateManyMutationInput = {
-    id?: IntFieldUpdateOperationsInput | number
     short_url?: StringFieldUpdateOperationsInput | string
     long_url?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -3325,37 +3321,37 @@ export namespace Prisma {
 
   export type UrlTicketCountOrderByAggregateInput = {
     id?: SortOrder
-    start?: SortOrder
-    end?: SortOrder
-    current?: SortOrder
+    range_start?: SortOrder
+    range_end?: SortOrder
+    current_value?: SortOrder
   }
 
   export type UrlTicketAvgOrderByAggregateInput = {
     id?: SortOrder
-    start?: SortOrder
-    end?: SortOrder
-    current?: SortOrder
+    range_start?: SortOrder
+    range_end?: SortOrder
+    current_value?: SortOrder
   }
 
   export type UrlTicketMaxOrderByAggregateInput = {
     id?: SortOrder
-    start?: SortOrder
-    end?: SortOrder
-    current?: SortOrder
+    range_start?: SortOrder
+    range_end?: SortOrder
+    current_value?: SortOrder
   }
 
   export type UrlTicketMinOrderByAggregateInput = {
     id?: SortOrder
-    start?: SortOrder
-    end?: SortOrder
-    current?: SortOrder
+    range_start?: SortOrder
+    range_end?: SortOrder
+    current_value?: SortOrder
   }
 
   export type UrlTicketSumOrderByAggregateInput = {
     id?: SortOrder
-    start?: SortOrder
-    end?: SortOrder
-    current?: SortOrder
+    range_start?: SortOrder
+    range_end?: SortOrder
+    current_value?: SortOrder
   }
 
   export type IntWithAggregatesFilter<$PrismaModel = never> = {
